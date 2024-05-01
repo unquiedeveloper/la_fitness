@@ -14,10 +14,9 @@ dotenv.config({path: "./config/config.env"})
 
 app.use(cors({
     origin: "*",
-    methods: ["POST","PUT","DELETE","GET"],
-    credentials: true,
+    
 }))
-
+// vikas
 
 app.use(cookieParser());
 app.use(express.json());
