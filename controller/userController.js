@@ -16,7 +16,7 @@ export const register = catchAsyncErrors(async(req,res,next)=>{
     if(isEmail){
         return next(new ErrorHandler("User already exsists",400))
     }else if(password !== cpassword){
-        return next(new ErrorHandler("password not match ",400))
+        return next(new ErrorHandler("password not match  ",400))
 
 
     }
@@ -31,7 +31,7 @@ export const register = catchAsyncErrors(async(req,res,next)=>{
         cpassword,
       
     })
-     
+    //  ayusdagghghbsdbhsdbh
     res.status(201).json({ message: "user registered successfuly" });
 
 
