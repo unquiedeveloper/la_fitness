@@ -77,7 +77,9 @@ export const getData = catchAsyncErrors((req,res,next)=>{
 export const logout = catchAsyncErrors((req,res,next)=>{
     
         console.log(`Hello my Logout Page`);
-        res.clearCookie('jwtoken', { path: '/' });
+        res.clearCookie('jwtoken', { path: '/' ,     httpOnly: true,
+        secure:true,
+        sameSite: "None", });
         res.status(200).send('User lOgout');
     
 })
