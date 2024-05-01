@@ -74,15 +74,13 @@ export const getData = catchAsyncErrors((req,res,next)=>{
     res.send(req.rootUser);
 })
    
-export const logout = catchAsyncErrors((req,res,next)=>{
-    
-        console.log(`Hello my Logout Page`);
-        res.clearCookie('jwtoken', { path: '/' ,     httpOnly: true,
-        secure:true,
-        sameSite: "None", });
-        res.status(200).send('User lOgout');
-    
-})
+export const logout = catchAsyncErrors((req, res, next) => {
+    console.log(`Hello my Logout Page`);
+    const secureOption = req.secure ? { secure: true } : {};
+    res.clearCookie('jwtoken', { path: '/', httpOnly: true, ...secureOption, sameSite: "None" });
+    res.status(200).send('User Logout');
+});
+
 
 
 
