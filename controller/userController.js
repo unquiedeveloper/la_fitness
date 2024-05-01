@@ -77,7 +77,7 @@ export const getData = catchAsyncErrors((req,res,next)=>{
 export const logout = catchAsyncErrors((req, res, next) => {
     console.log(`Hello my Logout Page`);
     const secureOption = req.secure ? { secure: true } : {};
-    res.clearCookie('jwtoken', { path: '/', httpOnly: true, ...secureOption, sameSite: "None" });
+    res.clearCookie('jwtoken', "", { path: '/', httpOnly: true, ...secureOption, sameSite: "None"  , expires: new Date(Date.now()) });
     res.status(200).send('User Logout');
 });
 
