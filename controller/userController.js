@@ -59,6 +59,7 @@ export const login =  catchAsyncErrors(async (req, res, next) => {
             expires: new Date(Date.now() + 25892000000),
             httpOnly: true,
             secure:true,
+            sameSite: "None",
         });
 
         res.json({ message: "User Signin Successfully" });
